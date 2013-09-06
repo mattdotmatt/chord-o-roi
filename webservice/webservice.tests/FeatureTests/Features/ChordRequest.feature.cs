@@ -34,8 +34,8 @@ namespace webservice.tests.FeatureTests.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "ChordRequest", "In order to verify I know my chords\r\nAs a guitar player\r\nI want to be shown picto" +
-                    "rial representations of chords I have requested", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "ChordRequest", "In order to show chords to my users\r\nAs an api user\r\nI want to be given data vers" +
+                    "ions of guitar chords", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -86,7 +86,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 8
  testRunner.When("I request the chord \"C\" from the api", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 9
- testRunner.Then("the image for the \"C\" chord should be returned by the api", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the representation for the \"C\" chord should be returned by the api", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
