@@ -8,7 +8,7 @@ namespace webservice.tests.FeatureTests.StepDefinitions
         [Given(@"the chord ""(.*)"" exists in the chord database")]
         public void GivenTheChordExistsInTheChordDatabase(string p0)
         {
-            ScenarioContext.Current.Pending();
+            // Set up database to contain C chord
         }
         
         [Given(@"the chord ""(.*)"" does not exist in the chord database")]
@@ -20,7 +20,7 @@ namespace webservice.tests.FeatureTests.StepDefinitions
         [When(@"I request the chord ""(.*)"" from the api")]
         public void WhenIRequestTheChordFromTheApi(string p0)
         {
-            ScenarioContext.Current.Pending();
+            // Request the chord from the api
         }
         
         [Then(@"the representation for the ""(.*)"" chord should be returned by the api")]

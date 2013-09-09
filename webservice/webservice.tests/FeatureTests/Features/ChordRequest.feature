@@ -6,7 +6,11 @@
 Scenario: Request an existing chord
 	Given the chord "C" exists in the chord database
 	When I request the chord "C" from the api
-	Then the representation for the "C" chord should be returned by the api
+	Then the following representation for the "C" chord should be returned by the api:
+	| Fret | String |
+	| 0    | B      |
+	| 1    | D      |
+	| 2    | A      |
 
 Scenario: Request a chord that does not exist
 	Given the chord "C" does not exist in the chord database

@@ -85,8 +85,21 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.Given("the chord \"C\" exists in the chord database", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
  testRunner.When("I request the chord \"C\" from the api", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Fret",
+                        "String"});
+            table1.AddRow(new string[] {
+                        "0",
+                        "B"});
+            table1.AddRow(new string[] {
+                        "1",
+                        "D"});
+            table1.AddRow(new string[] {
+                        "2",
+                        "A"});
 #line 9
- testRunner.Then("the representation for the \"C\" chord should be returned by the api", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the following representation for the \"C\" chord should be returned by the api:", ((string)(null)), table1, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -97,13 +110,13 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void RequestAChordThatDoesNotExist()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Request a chord that does not exist", ((string[])(null)));
-#line 11
+#line 15
 this.ScenarioSetup(scenarioInfo);
-#line 12
+#line 16
  testRunner.Given("the chord \"C\" does not exist in the chord database", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 13
+#line 17
  testRunner.When("I request the chord \"C\" from the api", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 14
+#line 18
  testRunner.Then("a 404 should be returned from the api", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
