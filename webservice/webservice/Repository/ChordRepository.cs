@@ -1,21 +1,14 @@
-﻿using System.Collections.Generic;
-using Simple.Data;
+﻿using Simple.Data;
 using webservice.Domain;
 
 namespace webservice.Repository
 {
     public class ChordRepository : IChordRepository
     {
-        private dynamic _db;
-
-        public ChordRepository()
+        public Chord GetByChordName(string chordName)
         {
-            _db = Database.Open();
-        }
-
-        public ICollection<Chord> GetByChordName(string chordName)
-        {
-            return _db.Chords.FindByName(chordName);
+            var db = Database.Open();
+            return db.Chords.FindByName(chordName);
         }
     }
 }

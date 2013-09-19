@@ -6,14 +6,14 @@ namespace webservice.Modules
     public class ChordModule : NancyModule
     {
         public const string ChordUrl = "/chord";
-        private readonly IChordRepository m_repository;
+        private readonly IChordRepository _repository;
 
         public ChordModule(IChordRepository repository)
             : base(ChordUrl)
         {
-            m_repository = repository;
+            _repository = repository;
 
-            Get["/{name}"] = p => View["Chord", m_repository.GetByChordName(p.Name)];
+            Get["/{name}"] = _ => _repository.GetByChordName(_.name);
         }
 
     }

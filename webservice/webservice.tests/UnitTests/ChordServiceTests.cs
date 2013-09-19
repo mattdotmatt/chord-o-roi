@@ -13,11 +13,7 @@ namespace webservice.tests.UnitTests
         public void ChordServiceShouldReturnAChordDescriptionForAFoundChord()
         {
             // Arrange
-            var expected = new Chord
-                {
-                    Id = 1,
-                    Name = "C",
-                    Fingerings = new Collection<Fingering>
+            var expected = new Chord(1, "C", new Collection<Fingering>
                         {
                             new Fingering{
                                 Fret = 0,
@@ -32,14 +28,12 @@ namespace webservice.tests.UnitTests
                                 String = StringEnum.A
                             }
                         }
-                };
-
-            var fakeResult = new Collection<Chord> { expected };
+                );
 
             var mockChordRepository = A.Fake<IChordRepository>();
             A.CallTo(() => mockChordRepository
              .GetByChordName("C"))
-             .Returns(fakeResult);
+             .Returns(expected);
 
             // Act
             var sut = new ChordService(mockChordRepository);

@@ -65,7 +65,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FeatureTests\StepDefinitions\ChordRepository.cs" />
     <Compile Include="FeatureTests\StepDefinitions\ChordRequestSteps.cs" />
     <Compile Include="FeatureTests\Features\ChordRequest.feature.cs">
       <AutoGen>True</AutoGen>
@@ -88,6 +87,9 @@
       <Project>{ECBBC029-6928-4E7D-9037-7585BEFA5B4A}</Project>
       <Name>webservice</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
