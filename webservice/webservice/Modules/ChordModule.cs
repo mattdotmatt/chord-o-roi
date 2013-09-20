@@ -13,7 +13,11 @@ namespace webservice.Modules
         {
             _repository = repository;
 
-            Get["/{name}"] = _ => _repository.GetByChordName(_.name);
+            Get["/{name}"] = _ =>
+                {
+                    var chord = _repository.GetByChordName(_.name);
+                    return chord ?? HttpStatusCode.NotFound;
+                };
         }
 
     }

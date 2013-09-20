@@ -1,10 +1,10 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
 
 namespace webservice.Domain
 {
     public class Chord
     {
-        public Chord(int id, string name, Collection<Fingering> fingerings)
+        public Chord(int id, string name, IList<Fingering> fingerings)
         {
             Id = id;
             Name = name;
@@ -19,6 +19,6 @@ namespace webservice.Domain
 
         public string Name { get; set; }
 
-        public Collection<Fingering> Fingerings { get; set; }
+        public IList<Fingering> Fingerings { get; set; }
     }
 }

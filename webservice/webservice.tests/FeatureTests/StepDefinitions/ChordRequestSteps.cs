@@ -1,4 +1,8 @@
-﻿using Nancy.Testing;
+﻿using System;
+using System.Collections.ObjectModel;
+using System.Linq;
+using Nancy;
+using Nancy.Testing;
 using Simple.Data;
 using TechTalk.SpecFlow;
 using Xunit;
@@ -27,14 +31,18 @@ namespace webservice.tests.FeatureTests.StepDefinitions
         [Given(@"the chord ""(.*)"" exists in the chord database")]
         public void GivenTheChordExistsInTheChordDatabase(string p0)
         {
-            var chord = new Chord(1, "C",null);
+            var chord = new Chord(1, "C",new Collection<Fingering>
+                {
+                    new Fingering{Fret = 0,String = StringEnum.B},
+                    new Fingering{Fret = 1,String = StringEnum.D},
+                    new Fingering{Fret = 2,String = StringEnum.A}
+                });
             _db.Chords.Insert(chord);
         }
 
         [Given(@"the chord ""(.*)"" does not exist in the chord database")]
         public void GivenTheChordDoesNotExistInTheChordDatabase(string p0)
         {
-            ScenarioContext.Current.Pending();
         }
 
         [When(@"I request the chord ""(.*)"" from the api")]
@@ -56,13 +64,24 @@ namespace webservice.tests.FeatureTests.StepDefinitions
         public void ThenTheRepresentationForTheChordShouldBeReturnedByTheApi(string p0, Table p1)
         {
             var chord = _apiResponse.Body.DeserializeJson<Chord>();
-            Assert.Equal("C",chord.Name);
+            Assert.Equal(p0,chord.Name);
+            foreach (var fingering in p1.Rows)
+            {
+                var stringName = fingering["String"];
+                var fret = Int32.Parse(fingering["Fret"]);
+                var chordString = chord.Fingerings.FirstOrDefault(o => o.String.ToString()==stringName);
+                Assert.NotNull(chordString);
+// ReSharper disable PossibleNullReferenceException
+                Assert.Equal(fret,chordString.Fret);
+// ReSharper restore PossibleNullReferenceException
+            }
+
         }
 
-        [Then(@"a (.*) should be returned from the api")]
-        public void ThenAShouldBeReturnedFromTheApi(int p0)
+        [Then(@"a 404 should be returned from the api")]
+        public void ThenAShouldBeReturnedFromTheApi()
         {
-            ScenarioContext.Current.Pending();
+            Assert.Equal(HttpStatusCode.NotFound,_apiResponse.StatusCode);
         }
     }
 }
