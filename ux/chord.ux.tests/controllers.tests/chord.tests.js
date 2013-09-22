@@ -6,9 +6,13 @@
 
 describe("Chords", function () {
     "use strict";
-    it("uses a date range based around the birthday", function() {
+    it("gets a chord fron the factory", function() {
+        var mockChordFactory = jasmine.createSpyObj('chordFactory', [ 'getChord' ]);
+        mockChordFactory.getChord.andCallFake(function(chordName) {
+            return 'C';
+        });
         var scope = {},
-            ctrl = new ChordCtrl(scope);
-        expect(scope.getChord()).toBe('C');
+            ctrl = new ChordCtrl(scope,mockChordFactory);
+        expect(scope.getChord('C')).toBe('C');
     });
 });
