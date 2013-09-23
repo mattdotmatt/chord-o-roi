@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html ng-app="">
+<html ng-app="chordApp">
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <script src="lib/require.min.js"></script>
+    <script src="controllers/chord.js"></script>
+    <script src="modules/chordFactory.js"></script>
 </head>
-<body>
+<body ng-controller="ChordCtrl">
 <div>
-    <label>Name:</label>
-    <input type="text" ng-model="yourName" placeholder="Enter a name here">
-    <hr>
-    <h1>Hello {{yourName}}!</h1>
+    <button ng-click="currentChord=getChord('C')">Call foo</button>
+    <h1>The chord is {{currentChord}}!</h1>
 </div>
 </body>
 </html>
