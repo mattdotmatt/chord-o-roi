@@ -1,7 +1,8 @@
 ﻿using Nancy;
-using webservice.Repository;
+using chord.ws.Repository;
+using HttpStatusCode = System.Net.HttpStatusCode;
 
-namespace webservice.Modules
+namespace chord.ws.Modules
 {
     public class ChordModule : NancyModule
     {

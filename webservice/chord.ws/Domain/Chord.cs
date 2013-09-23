@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace webservice.Domain
+namespace chord.ws.Domain
 {
     public class Chord
     {

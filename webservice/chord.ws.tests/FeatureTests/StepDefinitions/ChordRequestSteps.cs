@@ -6,9 +6,9 @@ using Nancy.Testing;
 using Simple.Data;
 using TechTalk.SpecFlow;
 using Xunit;
-using webservice.Domain;
-using webservice.Modules;
-using webservice.Repository;
+using chord.ws.Domain;
+using chord.ws.Modules;
+using chord.ws.Repository;
 
 namespace webservice.tests.FeatureTests.StepDefinitions
 {

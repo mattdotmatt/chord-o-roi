@@ -1,7 +1,7 @@
 ﻿using Simple.Data;
-using webservice.Domain;
+using chord.ws.Domain;
 
-namespace webservice.Repository
+namespace chord.ws.Repository
 {
     public class ChordRepository : IChordRepository
     {
