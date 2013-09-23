@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace webservice.Repository
+namespace chord.ws.Repository
 {
     public interface IRepository<T>
     {

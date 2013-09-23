@@ -1,6 +1,6 @@
-﻿using webservice.Domain;
+﻿using chord.ws.Domain;
 
-namespace webservice.Repository
+namespace chord.ws.Repository
 {
     public interface IChordRepository
     {

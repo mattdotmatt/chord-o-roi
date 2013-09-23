@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{ECBBC029-6928-4E7D-9037-7585BEFA5B4A}</ProjectGuid>
+    <ProjectGuid>{3A2DA577-3FC2-4A69-9F8C-4A39D6F6E4CC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>webservice</RootNamespace>
-    <AssemblyName>webservice</AssemblyName>
+    <RootNamespace>webservice.tests</RootNamespace>
+    <AssemblyName>webservice.tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -32,12 +32,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CsQuery">
+      <HintPath>..\packages\CsQuery.1.3.4\lib\net40\CsQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="FakeItEasy">
+      <HintPath>..\packages\FakeItEasy.1.13.1\lib\net40\FakeItEasy.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Nancy, Version=0.20.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Nancy">
       <HintPath>..\packages\Nancy.0.20.0\lib\net40\Nancy.dll</HintPath>
     </Reference>
-    <Reference Include="Simple.Data">
+    <Reference Include="Nancy.Testing">
+      <HintPath>..\packages\Nancy.Testing.0.20.0\lib\net40\Nancy.Testing.dll</HintPath>
+    </Reference>
+    <Reference Include="Simple.Data, Version=0.18.3.1, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Simple.Data.Core.0.18.3.1\lib\net40\Simple.Data.dll</HintPath>
     </Reference>
     <Reference Include="Simple.Data.Ado">
@@ -49,20 +57,39 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="TechTalk.SpecFlow">
+      <HintPath>..\packages\SpecFlow.1.9.0\lib\net35\TechTalk.SpecFlow.dll</HintPath>
+    </Reference>
+    <Reference Include="xunit">
+      <HintPath>..\packages\xunit.1.9.2\lib\net20\xunit.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Domain\Chord.cs" />
-    <Compile Include="Modules\ChordModule.cs" />
-    <Compile Include="Repository\ChordRepository.cs" />
-    <Compile Include="Services\ChordService.cs" />
-    <Compile Include="Domain\Fingering.cs" />
-    <Compile Include="Repository\IChordRepository.cs" />
-    <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="FeatureTests\StepDefinitions\ChordRequestSteps.cs" />
+    <Compile Include="FeatureTests\Features\ChordRequest.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChordRequest.feature</DependentUpon>
+    </Compile>
+    <Compile Include="UnitTests\ChordServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Domain\StringEnum.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
+    <None Include="FeatureTests\Features\ChordRequest.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ChordRequest.feature.cs</LastGenOutput>
+    </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\chord.ws\chord.ws.csproj">
+      <Project>{A98E3C12-0600-4FBA-A0B1-EC45ACFB2DCD}</Project>
+      <Name>chord.ws</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
