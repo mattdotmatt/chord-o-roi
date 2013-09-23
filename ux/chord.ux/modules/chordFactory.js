@@ -1,7 +1,9 @@
 // Factory
-chordApp.factory('chordFactory', function(){
+chordApp.factory('chordFactory', function($http){
     return {
         getChord: function(chordName){
+            return 'C';
+            /*
             $http({method: 'GET', url: '/someUrl'}).
                 success(function(data, status, headers, config) {
                     // this callback will be called asynchronously
@@ -11,6 +13,7 @@ chordApp.factory('chordFactory', function(){
                     // called asynchronously if an error occurs
                     // or server returns response with an error status.
                 });
+              */
         }
     }
 });

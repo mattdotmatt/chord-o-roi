@@ -1,7 +1,7 @@
-﻿using webservice.Domain;
-using webservice.Repository;
+﻿using chord.ws.Domain;
+using chord.ws.Repository;
 
-namespace webservice.Services
+namespace chord.ws.Services
 {
     public class ChordService
     {

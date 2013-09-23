@@ -1,4 +1,4 @@
-﻿namespace webservice.Domain
+﻿namespace chord.ws.Domain
 {
     public class Fingering
     {

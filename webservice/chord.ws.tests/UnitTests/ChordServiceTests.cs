@@ -1,9 +1,9 @@
 ﻿using System.Collections.ObjectModel;
 using FakeItEasy;
 using Xunit;
-using webservice.Domain;
-using webservice.Repository;
-using webservice.Services;
+using chord.ws.Domain;
+using chord.ws.Repository;
+using chord.ws.Services;
 
 namespace webservice.tests.UnitTests
 {
