@@ -8,7 +8,7 @@ namespace chord.ws.Repository
         public Chord GetByChordName(string chordName)
         {
             var db = Database.Open();
-            return db.Chords.FindByName(chordName);
+            return db.Chords.With(db.Chords.Fingerings).FindByName(chordName);
         }
     }
 }
