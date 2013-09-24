@@ -17,7 +17,7 @@ namespace chord.ws.Modules
             Get["/{name}"] = _ =>
                 {
                     var chord = _repository.GetByChordName(_.name);
-                    return chord ?? HttpStatusCode.NotFound;
+                    return chord ?? new NotFoundResponse();
                 };
         }
 

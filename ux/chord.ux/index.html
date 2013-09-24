@@ -8,8 +8,10 @@
 </head>
 <body ng-controller="ChordCtrl">
 <div>
-    <button ng-click="currentChord=getChord('C')">Call foo</button>
-    <h1>The chord is {{currentChord}}!</h1>
+    <button ng-click="getChord('C')">Call foo</button>
+    <h1>The chord is {{chordName}}!</h1>
+    <div ng-repeat="finger in fingerings" value="{{finger.Fret}}" >{{finger.Fret}}{{finger.String}}</div>
 </div>
 </body>
+</html>
 </html>
