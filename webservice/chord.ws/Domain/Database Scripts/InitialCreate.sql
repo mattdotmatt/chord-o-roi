@@ -1,0 +1,44 @@
+﻿/****** Object:  Table [dbo].[Chords]    Script Date: 24/09/2013 12:10:40 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Chords](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](50) NOT NULL,
+ CONSTRAINT [PK_Chords] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+/****** Object:  Table [dbo].[Fingerings]    Script Date: 24/09/2013 12:11:01 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Fingerings](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Fret] [tinyint] NOT NULL,
+	[String] [int] NOT NULL,
+	[ChordId] [int] NOT NULL,
+ CONSTRAINT [PK_Fingerings] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[Fingerings]  WITH CHECK ADD  CONSTRAINT [FK_Chords_Fingerings] FOREIGN KEY([ChordId])
+REFERENCES [dbo].[Chords] ([Id])
+GO
+
+ALTER TABLE [dbo].[Fingerings] CHECK CONSTRAINT [FK_Chords_Fingerings]
+GO
