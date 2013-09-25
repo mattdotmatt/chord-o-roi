@@ -5,13 +5,21 @@
     <script src="lib/require.min.js"></script>
     <script src="controllers/chord.js"></script>
     <script src="modules/chordFactory.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/chord.css">
 </head>
 <body ng-controller="ChordCtrl">
 <div>
     <button ng-click="getChord('C')">Call foo</button>
     <h1>The chord is {{chordName}}!</h1>
-    <div ng-repeat="finger in fingerings" value="{{finger.Fret}}" >{{finger.Fret}}{{finger.String}}</div>
+    <div ng-repeat="fret in frets" class="fret">
+        <div class="string" id=06></div>
+        <div class="string" id=05></div>
+        <div class="string" id=04></div>
+        <div class="string" id=03></div>
+        <div class="string" id=02></div>
+        <div class="string" id=01></div>
+    </div>
+    <div ng-repeat="finger in fingerings" class="finger fret{{finger.Fret}} string{{finger.String}}"></div>
 </div>
 </body>
-</html>
 </html>
