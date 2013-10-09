@@ -6,6 +6,12 @@ chordApp.config(function($httpProvider){
     });
 
 function ChordCtrl($scope,chordFactory) {
+    $scope.getChordStack = function(stackSize){
+        chordFactory.getChordStack(stackSize, function(data){
+                $scope.chordStack = data.Stack;
+            }
+        );
+    },
     $scope.getChord = function(chordName){
         chordFactory.getChord(chordName, function(data){
                 $scope.chordName = data.Name;

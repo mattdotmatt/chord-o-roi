@@ -7,7 +7,8 @@
     <script src="modules/chordFactory.js"></script>
     <link rel="stylesheet" type="text/css" href="styles/chord.css">
 </head>
-<body ng-controller="ChordCtrl">
+<body ng-controller="ChordCtrl" ng-init="getChords()">
+<h1>Available chords {{chords}}!</h1>
 <div>
     <button ng-click="getChord('C')">Call foo</button>
     <h1>The chord is {{chordName}}!</h1>
@@ -21,5 +22,14 @@
     </div>
     <div ng-repeat="finger in fingerings" class="finger fret{{finger.Fret}} string{{finger.String}}"></div>
 </div>
+<script language="javascript">
+    function getNewChord(){
+        getChord('D');
+    }
+
+    $( document ).ready(function() {
+        setInterval(getNewChord(), 2000);
+    });
+</script>
 </body>
 </html>
