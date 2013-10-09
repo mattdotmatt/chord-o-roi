@@ -43,9 +43,21 @@ describe("Chords", function () {
     });
 
     it("gets next chord off the stack", function() {
+        var mockChordFactory = jasmine.createSpyObj('chordFactory', [ 'getChord' ]);
+        mockChordFactory.getChord.andCallFake(function(chordName,callback) {
+            var data = {Name:'A'};
+            callback(data);
+        });
+        var scope = {}, ctrl = new ChordCtrl(scope,mockChordFactory);
+        // Setup chord stack
+        scope.chordStack = ['A','E'];
+        // Request the next one
+        scope.getNextChord();
+        // Should be A
+        expect(scope.chordName).toBe('A');
+        expect(scope.chordStack).toEqual(['E']);
     });
-    it("takes the current chord off the stack", function() {
-    });
+
     it("replenishes the stack when it nears empty", function() {
     });
 

@@ -4,12 +4,12 @@
     <list default="true" id="da0cef7d-002e-4687-b29d-319ab7f009df" name="Default" comment="" />
     <ignored path="ux.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/index.html" changelist="da0cef7d-002e-4687-b29d-319ab7f009df" time="1380309043653" ignored="false" />
-    <file path="/chord.js" changelist="da0cef7d-002e-4687-b29d-319ab7f009df" time="1381317479427" ignored="false" />
+    <file path="/index.html" changelist="da0cef7d-002e-4687-b29d-319ab7f009df" time="1381319818969" ignored="false" />
+    <file path="/chord.js" changelist="da0cef7d-002e-4687-b29d-319ab7f009df" time="1381321564396" ignored="false" />
     <file path="/jsTestDriver.conf" changelist="da0cef7d-002e-4687-b29d-319ab7f009df" time="1381234464087" ignored="false" />
-    <file path="/chord.tests.js" changelist="da0cef7d-002e-4687-b29d-319ab7f009df" time="1381315640868" ignored="false" />
+    <file path="/chord.tests.js" changelist="da0cef7d-002e-4687-b29d-319ab7f009df" time="1381317748747" ignored="false" />
     <file path="/chordServiceModule.js" changelist="da0cef7d-002e-4687-b29d-319ab7f009df" time="1379882015384" ignored="false" />
-    <file path="/chordFactory.js" changelist="da0cef7d-002e-4687-b29d-319ab7f009df" time="1381315553592" ignored="false" />
+    <file path="/chordFactory.js" changelist="da0cef7d-002e-4687-b29d-319ab7f009df" time="1381322097284" ignored="false" />
     <file path="/chord.css" changelist="da0cef7d-002e-4687-b29d-319ab7f009df" time="1380132379031" ignored="false" />
     <file path="/fragment.js" changelist="da0cef7d-002e-4687-b29d-319ab7f009df" time="1381317442178" ignored="false" />
     <file path="/fragment.js2" changelist="da0cef7d-002e-4687-b29d-319ab7f009df" time="1381317536778" ignored="false" />
@@ -35,7 +35,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chord.ux/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="7" selection-start="1160" selection-end="1160" vertical-scroll-proportion="0.0">
+            <state line="25" column="0" selection-start="1074" selection-end="1074" vertical-scroll-proportion="-15.846154">
               <folding />
             </state>
           </provider>
@@ -50,10 +50,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chord.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="chord.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/chord.ux/controllers/chord.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="5" selection-start="479" selection-end="479" vertical-scroll-proportion="0.0">
+            <state line="26" column="53" selection-start="954" selection-end="954" vertical-scroll-proportion="0.7935368">
               <folding />
             </state>
           </provider>
@@ -71,16 +71,16 @@
       <file leaf-file-name="chordFactory.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chord.ux/modules/chordFactory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="8" selection-start="233" selection-end="233" vertical-scroll-proportion="0.0">
+            <state line="6" column="52" selection-start="350" selection-end="350" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chord.tests.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="chord.tests.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chord.ux.tests/controllers.tests/chord.tests.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="89" selection-start="551" selection-end="551" vertical-scroll-proportion="0.47935367">
+            <state line="60" column="66" selection-start="2284" selection-end="2284" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -107,11 +107,11 @@
       <list>
         <option value="$PROJECT_DIR$/chord.ux/modules/chordServiceModule.js" />
         <option value="$PROJECT_DIR$/chord.ux/styles/chord.css" />
-        <option value="$PROJECT_DIR$/chord.ux/index.html" />
         <option value="$PROJECT_DIR$/chord.ux.tests/jsTestDriver.conf" />
-        <option value="$PROJECT_DIR$/chord.ux/modules/chordFactory.js" />
         <option value="$PROJECT_DIR$/chord.ux.tests/controllers.tests/chord.tests.js" />
+        <option value="$PROJECT_DIR$/chord.ux/index.html" />
         <option value="$PROJECT_DIR$/chord.ux/controllers/chord.js" />
+        <option value="$PROJECT_DIR$/chord.ux/modules/chordFactory.js" />
       </list>
     </option>
   </component>
@@ -154,6 +154,48 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="ux" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ux" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ux" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ux" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ux" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chord.ux" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ux" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ux" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chord.ux" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -354,12 +396,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/chord.ux/controllers/chord.js</url>
-          <line>11</line>
+          <line>12</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/chord.ux/controllers/chord.js</url>
-          <line>12</line>
+          <line>13</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
@@ -430,13 +472,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chord.ux/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="7" selection-start="1160" selection-end="1160" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/chord.ux.tests/jsTestDriver.conf">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="41" selection-start="111" selection-end="111" vertical-scroll-proportion="0.0">
@@ -451,13 +486,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chord.ux/modules/chordFactory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="8" selection-start="233" selection-end="233" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/chord.ux.tests/lib/jasmine-1.3.1/jasmine.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="413" column="0" selection-start="10589" selection-end="10589" vertical-scroll-proportion="0.0">
@@ -465,16 +493,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chord.ux/controllers/chord.js">
+    <entry file="file://$PROJECT_DIR$/chord.ux.tests/controllers.tests/chord.tests.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="5" selection-start="479" selection-end="479" vertical-scroll-proportion="0.0">
+        <state line="60" column="66" selection-start="2284" selection-end="2284" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chord.ux.tests/controllers.tests/chord.tests.js">
+    <entry file="file://$PROJECT_DIR$/chord.ux/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="89" selection-start="551" selection-end="551" vertical-scroll-proportion="0.47935367">
+        <state line="25" column="0" selection-start="1074" selection-end="1074" vertical-scroll-proportion="-15.846154">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chord.ux/modules/chordFactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="52" selection-start="350" selection-end="350" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chord.ux/controllers/chord.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="53" selection-start="954" selection-end="954" vertical-scroll-proportion="0.7935368">
           <folding />
         </state>
       </provider>

@@ -5,7 +5,9 @@ chordApp.config(function($httpProvider){
         delete $httpProvider.defaults.headers.common['X-Requested-With'];
     });
 
-function ChordCtrl($scope,chordFactory) {
+function ChordCtrl($scope,$timeout,chordFactory) {
+    $scope.chordStack = ['C','D','E'];
+
     $scope.getChordStack = function(stackSize){
         chordFactory.getChordStack(stackSize, function(data){
                 var existingStack = getExistingChordStack();
@@ -21,6 +23,11 @@ function ChordCtrl($scope,chordFactory) {
             }
         );
     }
+    $scope.getNextChord = function(){
+        var nextChord = $scope.chordStack.shift();
+        this.getChord(nextChord);
+    }
+
     function getExistingChordStack() {
         var existingStack;
         if (typeof $scope.chordStack == 'undefined') {
@@ -30,4 +37,15 @@ function ChordCtrl($scope,chordFactory) {
         }
         return existingStack;
     }
+
+    // schedule update in one second
+    function updateLater() {
+        // save the timeoutId for canceling
+        $timeout(function() {
+            $scope.getNextChord()
+            updateLater();
+        }, 5000);
+    }
+
+    updateLater(); // kick off the UI update process.
 }
