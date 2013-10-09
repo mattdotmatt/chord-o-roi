@@ -8,7 +8,8 @@ chordApp.config(function($httpProvider){
 function ChordCtrl($scope,chordFactory) {
     $scope.getChordStack = function(stackSize){
         chordFactory.getChordStack(stackSize, function(data){
-                $scope.chordStack = data.Stack;
+                var existingStack = getExistingChordStack();
+                $scope.chordStack = existingStack.concat(data.Stack)
             }
         );
     },
@@ -19,5 +20,14 @@ function ChordCtrl($scope,chordFactory) {
                 $scope.frets = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18];
             }
         );
+    }
+    function getExistingChordStack() {
+        var existingStack;
+        if (typeof $scope.chordStack == 'undefined') {
+            existingStack = [];
+        } else {
+            existingStack = $scope.chordStack;
+        }
+        return existingStack;
     }
 }

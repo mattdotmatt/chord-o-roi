@@ -30,6 +30,17 @@ describe("Chords", function () {
         expect(scope.chordStack).toEqual(['C','D','E']);
     });
 
+    it("if a stack exists then getting a chord stack from the factory adds to it", function() {
+        var mockChordFactory = jasmine.createSpyObj('chordFactory', [ 'getChordStack' ]);
+        mockChordFactory.getChordStack.andCallFake(function(stackSize,callback) {
+            var data = {Stack:['C','D','E']};
+            callback(data);
+        });
+        var scope = {}, ctrl = new ChordCtrl(scope,mockChordFactory);
+        scope.chordStack = ['A','E'];
+        scope.getChordStack(10);
+        expect(scope.chordStack).toEqual(['A','E','C','D','E']);
+    });
 
     it("gets next chord off the stack", function() {
     });
