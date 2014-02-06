@@ -16,5 +16,10 @@ namespace chord.ws.Services
         {
             return  _chordRepository.GetByChordName(chordName);
         }
+
+        public Chord Add(Chord chord)
+        {
+            return _chordRepository.Add(chord);
+        }
     }
 }

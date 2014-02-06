@@ -1,6 +1,7 @@
-﻿using Nancy;
+﻿using System.Collections.Generic;
+using Nancy;
+using chord.ws.Domain;
 using chord.ws.Repository;
-using HttpStatusCode = System.Net.HttpStatusCode;
 
 namespace chord.ws.Modules
 {

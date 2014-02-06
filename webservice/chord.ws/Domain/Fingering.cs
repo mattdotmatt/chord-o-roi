@@ -7,7 +7,5 @@
         public int Fret { get; set; }
 
         public StringEnum String { get; set; }
-
-        public int ChordId { get; set; }
     }
 }
