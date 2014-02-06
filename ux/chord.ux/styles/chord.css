@@ -1,0 +1,68 @@
+.fret{
+    width:180px;
+    height:30px;
+    border-left:solid 1px black;
+    border-bottom:solid 2px black;
+}
+
+.string{
+    width:29px;
+    height:30px;
+    border-right:solid 1px black;
+    float:left;
+}
+
+.finger{
+    position:absolute;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    border: solid 2px #000000;
+    background-color: #11FF11;
+    width: 15px;
+    height: 15px;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.fret1{
+    top:120px;
+}
+
+.fret2{
+    top:150px;
+}
+
+.fret3{
+    top:180px;
+}
+
+.fret4{
+    top:210px;
+}
+
+.string1{
+    left:10px;
+}
+
+.string2{
+    left:40px;
+}
+
+.string3{
+    left:70px;
+}
+
+.string4{
+    left:100px;
+}
+
+.string5{
+    position:absolute;
+    left:130px;
+}
+
+.string6{
+    position:absolute;
+    left:170px;
+}

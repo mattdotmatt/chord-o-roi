@@ -6,13 +6,59 @@
 
 describe("Chords", function () {
     "use strict";
-    it("gets a chord fron the factory", function() {
+
+    it("gets a chord from the factory", function() {
         var mockChordFactory = jasmine.createSpyObj('chordFactory', [ 'getChord' ]);
-        mockChordFactory.getChord.andCallFake(function(chordName) {
-            return 'C';
+        mockChordFactory.getChord.andCallFake(function(chordName,callback) {
+            var data = {Name:'C'};
+            callback(data);
         });
-        var scope = {},
-            ctrl = new ChordCtrl(scope,mockChordFactory);
-        expect(scope.getChord('C')).toBe('C');
+        var scope = {}, ctrl = new ChordCtrl(scope,mockChordFactory);
+
+        scope.getChord('C');
+        expect(scope.chordName).toBe('C');
     });
+
+    it("gets a chord stack from the factory", function() {
+        var mockChordFactory = jasmine.createSpyObj('chordFactory', [ 'getChordStack' ]);
+        mockChordFactory.getChordStack.andCallFake(function(stackSize,callback) {
+            var data = {Stack:['C','D','E']};
+            callback(data);
+        });
+        var scope = {}, ctrl = new ChordCtrl(scope,mockChordFactory);
+        scope.getChordStack(10);
+        expect(scope.chordStack).toEqual(['C','D','E']);
+    });
+
+    it("if a stack exists then getting a chord stack from the factory adds to it", function() {
+        var mockChordFactory = jasmine.createSpyObj('chordFactory', [ 'getChordStack' ]);
+        mockChordFactory.getChordStack.andCallFake(function(stackSize,callback) {
+            var data = {Stack:['C','D','E']};
+            callback(data);
+        });
+        var scope = {}, ctrl = new ChordCtrl(scope,mockChordFactory);
+        scope.chordStack = ['A','E'];
+        scope.getChordStack(10);
+        expect(scope.chordStack).toEqual(['A','E','C','D','E']);
+    });
+
+    it("gets next chord off the stack", function() {
+        var mockChordFactory = jasmine.createSpyObj('chordFactory', [ 'getChord' ]);
+        mockChordFactory.getChord.andCallFake(function(chordName,callback) {
+            var data = {Name:'A'};
+            callback(data);
+        });
+        var scope = {}, ctrl = new ChordCtrl(scope,mockChordFactory);
+        // Setup chord stack
+        scope.chordStack = ['A','E'];
+        // Request the next one
+        scope.getNextChord();
+        // Should be A
+        expect(scope.chordName).toBe('A');
+        expect(scope.chordStack).toEqual(['E']);
+    });
+
+    it("replenishes the stack when it nears empty", function() {
+    });
+
 });
